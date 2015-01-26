@@ -1,0 +1,32 @@
+---
+layout: 'default'
+title: 'Home'
+---
+
+<!-- Primary marketing message or call to action -->
+<div class="jumbotron">
+	<h1>hello.</h1>
+	<p>
+		I'm a .NET Developer, JavaScript enthusiast, Android user, sometime musician and experimental cook. This is a collection of blog posts, code playthings, links to me elsewhere on the web and, occasionally, recipes.
+	</p>
+</div>
+
+<!-- Example row of columns -->
+<div class="row" class="text-center">
+	<div class="col-lg-6">
+		<h2>Blog</h2>
+		<nav class="recentposts">
+			<ul>
+			<% for document in  @getCollection('posts').toJSON().slice(0,5): %>
+				<li><a href="<%= document.url %>" property="dc:title"><%= document.title %></a>
+					<span><%= document.date.toDateString() %></span></li>
+			<% end %>
+			</ul>
+		</nav>
+	</div>
+	<div class="col-lg-6">
+		<h2>Bootstrap</h2>
+		<p>Bootstrap is a toolkit designed to kickstart development of webapps and sites. It includes base CSS and HTML for typography, forms, buttons, tables, grids, navigation, and more.</p>
+		<p><a class="btn btn-default" href="http://twitter.github.com/bootstrap/">Visit Website</a></p>
+	</div>
+</div>
